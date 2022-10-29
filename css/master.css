@@ -1,0 +1,442 @@
+:root {
+    --color-one: #F7F7F7;
+    --color-two: #EEEEEE;
+    --color-three: #393E46;
+    --color-four: #929AAB;
+    --color-five: black;
+}
+
+body {
+    margin: 0px;
+}
+
+* {
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+::selection {
+    background-color: var(--color-five);
+    color: var(--color-one);
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 1fr 200px;
+    grid-template-areas: "header" "body" "footer";
+}
+
+/*
+==============
+=== Header ===
+==============
+*/
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "head head head . nav nav nav nav . buy";
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--color-one);
+    box-shadow: 0px 3px 10px -5px var(--color-five);
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    perspective: 300px;
+}
+
+header .head {
+    grid-area: head;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "logo title title";
+    align-items: center;
+}
+
+header .head .applelogo {
+    grid-area: logo;
+    margin: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+header .head h1 {
+    grid-area: title;
+    margin: 10px;
+    width: 200px;
+    text-align: left;
+}
+
+header nav {
+    grid-area: nav;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    list-style: none;
+}
+
+header nav ul li a {
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    color: var(--color-five);
+    opacity: .8;
+}
+
+header nav ul li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+    font-weight: 600;
+    transform: scale(1.1);
+}
+
+header .buy {
+    grid-area: buy;
+    background-color: var(--color-five);
+    color: var(--color-one);
+    width: 70px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 2px 5px 2px 5px;
+    filter: drop-shadow(2px 5px 3px var(--color-five));
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+header .buy:hover {
+    font-weight: 300;
+    filter: none;
+    transform: scale(1);
+}
+
+/*
+==============
+=== Main ===
+==============
+*/
+
+main .head {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 40px auto;
+    width: 80%;
+    padding: 10px;
+    box-shadow: 0px 3px 10px -5px var(--color-five);
+}
+
+main .head .text {
+    width: fit-content;
+    padding: 20px 40px;
+    perspective: 300px;
+    transform-style: preserve-3d;
+
+}
+
+main .head .text h2,
+main .head .text p {
+    margin: 50px auto;
+    width: 350px;
+}
+
+main .head .text .links {
+    display: flex;
+    flex-wrap: row wrap;
+    margin: 50px auto;
+    width: 350px;
+}
+
+main .head .text h2,
+main .head .text p {
+    text-align: center;
+}
+
+main .head .text h2 {
+    font-size: 50px;
+}
+
+main .head .text .links .buy {
+    background-color: var(--color-five);
+    color: var(--color-one);
+    width: 140px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    filter: drop-shadow(2px 5px 3px var(--color-five));
+    transform: scale(1.2);
+    transition: all .3s;
+}
+
+main .head .text .links a:hover {
+    font-weight: 300;
+    filter: none;
+    transform: scale(1);
+}
+main .head .text .links a:hover {
+    font-weight: 300;
+    filter: none;
+    transform: scale(1);
+}
+
+main .head .text .links .exp {
+    background-color: transparent;
+    color: var(--color-five);
+    width: 120px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 3px 5px 10px -5px var(--color-five);
+    border: 1px solid var(--color-five);
+    transform: scale(1.2);
+    transition: all .3s;
+}
+
+main .head .text .links a:hover {
+    font-weight: 300;
+    filter: none;
+    box-shadow: none;
+    transform: scale(1);
+}
+
+main .head .applephoto {
+    width: 500px;
+    height: 500px;
+    filter: drop-shadow(2px 4px 6px var(--color-five));
+    transition: all .3s;
+}
+
+main .head .applephoto:hover {
+    transform: scale3d(1.1, 1.1, 1.5);
+}
+
+/* 
+---------------
+--- devices ---
+---------------
+*/
+
+main .device {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    margin: 20px auto;
+    width: 100%;
+}
+
+main .device .iphone {
+    background-color: var(--color-two);
+    width: 400px;
+    margin: 10px;
+    align-self: auto;
+    border-radius: 5px 10px;
+    box-shadow: 3px 7px 7px -7px var(--color-five);
+}
+
+main .device .iphone img {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    transition: all .3s;
+}
+
+main .device .iphone img:hover {
+    transform: scale(1.1);
+}
+
+main .device .iphone h3,
+main .device .iphone p {
+    margin: 20px auto;
+    width: fit-content;
+    font-size: 20px;
+}
+
+main .device .iphone hr {
+    width: 50%;
+    margin: 20px auto;
+}
+
+main .device .iphone .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 20px auto;
+}
+
+main .device .iphone button {
+    align-self: auto;
+    background-color: var(--color-three);
+    box-shadow: 5px 7px 7px -7px var(--color-five);
+    border: 1px solid var(--color-three);
+    border-radius: 3px 5px;
+    width: 100px;
+    padding: 10px;
+    margin: 20px;
+    font-weight: 600;
+    transform: scale(1.2);
+    transition: all .3s;
+}
+
+main .device .iphone button:hover {
+    transform: scale(1);
+    font-weight: 100;
+}
+
+main .device .iphone button a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-one);
+}
+
+main .device .iphone .button input {
+    display: none;
+
+}
+
+main .device .iphone .button label {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all .3s;
+}
+
+main .device .iphone .button label:hover {
+    transform: scale(1);
+}
+
+main .device .iphone .button label::before {
+    content: "Add To Card";
+    background-color: green;
+    color: var(--color-one);
+    border: 1px solid green;
+    box-shadow: 5px 7px 7px -7px green;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 3px 5px;
+}
+
+.device .iphone .button input:checked + label::before {
+    content: "Remove";
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+    box-shadow: 5px 7px 7px -7px red;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 3px 5px;
+}
+
+/* 
+==============
+=== Footer ===
+==============
+*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-five);
+    color: var(--color-one);
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0px 5px 10px 5px var(--color-five);
+}
+
+footer .copy,
+footer .about {
+    width: fit-content;
+}
+
+footer::selection {
+    background-color: var(--color-one);
+    color: var(--color-five);
+}
+
+/* 
+------------
+--- left ---
+------------
+*/
+
+footer .copy p,
+footer .copy .social {
+    padding: 10px;
+    margin: 10px;
+}
+
+footer .copy .social {
+    margin-left: 40px;
+}
+
+footer .copy .social a {
+    text-decoration: none;
+}
+
+footer .copy .social a svg {
+    fill: var(--color-one);
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    transition: all .3s;
+}
+
+footer .copy .social a svg:hover {
+    transform: scale(1.1);
+}
+
+/* 
+-------------
+--- right ---
+-------------
+*/
+
+footer .about {
+    align-self: center;
+}
+
+footer .about div {
+    margin: 20px;
+}
+
+footer .about div svg {
+    fill: var(--color-one);
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+}
+
+footer .about div a,
+footer .about div span {
+    padding: 5px;
+    width: fit-content;
+    margin: 5px;
+    text-decoration: none;
+    color: var(--color-one);
+}
